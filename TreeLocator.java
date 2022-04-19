@@ -33,7 +33,7 @@ public class TreeLocator<T> implements Locator<T> {
 	
 	
 	@Override///////////////////////////////////////////////////////////////
-	public int add(T e, Location loc) {//////wrong completly!!!!
+	public int add(T e, Location loc) {
 		int numComparisons=0;
 		LocationNode<T> p=root;
 		LocationNode<T> q=root;
@@ -193,57 +193,6 @@ public class TreeLocator<T> implements Locator<T> {
 
 		
 		
-		
-		
-		
-		
-		
-		////////My prevoius remove() it has infinit loop!!!
-		
-		
-		/*
-		LocationNode<T> pp =root;
-		int numComparison=0;
-		int zero=0;
-		boolean check=false;
-		
-		if(root==null) return new Pair<Boolean, Integer>(check,zero);
-		
-		while(pp!=null) {
-			numComparison++;
-			
-			if((MySearchMethod(loc,pp))==0) {
-				if(pp.Ldata.empty())
-					return new Pair<Boolean, Integer>(check,numComparison); 
-				
-				pp.Ldata.findFirst();
-				while(!pp.Ldata.last()) {
-					if(pp.Ldata.retrieve().equals(e)) {
-						check=true;
-						pp.Ldata.remove();
-						
-					}//remove if find
-					pp.Ldata.findNext();
-				}//end while
-				if(pp.Ldata.retrieve().equals(e)) {//check the last element
-					check=true;
-					pp.Ldata.remove();}
-			}//end if 
-			
-			else if ((MySearchMethod(loc,pp))==1)//My search method determine the loc is which child
-				pp=pp.baby1;
-			
-			else if((MySearchMethod(loc,pp))==2)
-				pp=pp.baby2;
-			
-			else if((MySearchMethod(loc,pp))==3)
-				pp=pp.baby3;
-			
-			else if ((MySearchMethod(loc,pp))==4)
-				pp=pp.baby4;
-		}
-		
-		return new Pair<Boolean, Integer>(check,numComparison);*/
 	}
 
 	@Override///////////////////////////////////////////////////////////
@@ -357,32 +306,8 @@ public class TreeLocator<T> implements Locator<T> {
 			numofComparison+=inRecRang( lowerLeft, upperRight,  LowerRight,  UpperLeft,  arr, rooot.baby4) ;
 		}
 		
-		///////////////Start switch
 		
-		//switch(pick) { 
-		//case 1:
-			/*{ if(pick==1) {
-				numofComparison+=inRecRang( lowerLeft, upperRight,  LowerRight,  UpperLeft,  arr, rooot.baby1) ; 
-	
-		}}
-		//case 2: 
-			{ if(pick==2) {
-				numofComparison+=inRecRang( lowerLeft, upperRight,  LowerRight,  UpperLeft,  arr, rooot.baby2) ;
 		
-		}}
-		//case 3: 
-			{if(pick==3) {
-				numofComparison+=inRecRang( lowerLeft, upperRight,  LowerRight,  UpperLeft,  arr, rooot.baby3);
-		
-		}}
-		//case 4: 
-			{if(pick==4) {
-				numofComparison+=inRecRang( lowerLeft, upperRight,  LowerRight,  UpperLeft,  arr, rooot.baby4) ;
-		
-		}}*/
-
-	
-		//}//End switch
 		}
 		return numofComparison; }
 
@@ -390,7 +315,7 @@ public class TreeLocator<T> implements Locator<T> {
 		
 		
 	
-	///////////////////////My method 
+	//Method search 
 	private int MySearchMethod(Location search_loc,	LocationNode<T> pp) {
 		int s=0;
 		if(search_loc.y==pp.location_key.y&&search_loc.x==pp.location_key.x)
