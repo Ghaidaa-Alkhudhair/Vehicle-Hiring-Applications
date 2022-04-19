@@ -24,7 +24,7 @@ public TreeLocatorMap() {
 	}
 
 	@Override
-	public Pair<Boolean, Integer> add(K k, Location loc) {//this method may be changed!!
+	public Pair<Boolean, Integer> add(K k, Location loc) {
 	
 		int numOfComForLocation=0;
 		
@@ -67,10 +67,10 @@ public TreeLocatorMap() {
 				Map_BST.update(loc);
 				f_u_Treelocator=Loc_Loc.add(k, loc);
 				final_deleted_or_not=true;
-			////here may be return 			
+			 			
 			} 
 			else if (f_u==false) {
-				System.out.println("Entered the never entering f_u");
+				System.out.println("## ");
 				final_deleted_or_not=false;
 			}
 			}
@@ -96,7 +96,7 @@ return  new Pair<Location, Integer>((Map_BST.retrieve()),numnum);
 	@Override
 	public Pair<Boolean, Integer> remove(K k) {
 		boolean can_we_delet=false;
-		boolean check=false;//////this is may be replaced with -> is_it_found.second;
+		boolean check=false;
 		Pair<Boolean, Integer> is_it_found=Map_BST.find(k);
 		can_we_delet=is_it_found.first;
 		if(can_we_delet==false) {
@@ -127,7 +127,7 @@ return  new Pair<Location, Integer>((Map_BST.retrieve()),numnum);
 		collected_data=coming_pair.first;
 		new_list_adding_data=new LinkedList<K>();
 		if(collected_data.empty()) {
-         System.out.println(" Entered collected_data.empty()");
+         System.out.println("##");
 			return new Pair<List<K>, Integer>(new_list_adding_data,coming_pair.second);
 		}
 		else if(!collected_data.empty()) {
@@ -141,12 +141,7 @@ return  new Pair<Location, Integer>((Map_BST.retrieve()),numnum);
 			////checking the last element
 			MyMethodToAddGetInRange(new_list_adding_data,collected_data.retrieve().second);
 			
-		}//end else if(!collected_data.empty())
-		
-			
-		
-		
-		
+		}
 		
 		
 		return new Pair<List<K>, Integer>(new_list_adding_data,coming_pair.second);
@@ -160,7 +155,7 @@ return  new Pair<Location, Integer>((Map_BST.retrieve()),numnum);
 				old_is_gold.findNext();
 			}//end while
 			new_arr.insert(old_is_gold.retrieve());
-		}//end if (!old_is_gold.empty())
+		}
 		
 		
 		
